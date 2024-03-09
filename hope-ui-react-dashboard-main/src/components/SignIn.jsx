@@ -23,7 +23,7 @@ export default function SignIn(props) {
   const {openButtonClassname} = props;
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-
+  //EMAIL VALIDATION
   //EMAIL VALIDATION
   const [value, setValue] = React.useState("");
 
