@@ -835,7 +835,18 @@ export const comCss = makeStyles(() => ({
     scroll_to_top: {
         color: Theme.colors.base1,
         background: Theme.colors.base8,
-        transition: "0.7s !important",
+        transition: "0.3s !important",
+        display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+        "&:hover": {
+            color: Theme.colors.base1,
+            background: Theme.colors.base6,
+            borderRadius: '50%',
+            padding: '30px',
+            transition: 'all .3s  ease-in-out',
+            
+        },
     },
 
     //pagination

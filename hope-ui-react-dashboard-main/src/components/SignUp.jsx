@@ -1,4 +1,5 @@
-import React from "react";
+import '../index-tailwind.css'
+import React, { useState } from "react";
 import {
   Modal,
   ModalContent,
@@ -10,28 +11,21 @@ import {
 } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
 
-import { Select, SelectItem } from "@nextui-org/react";
-
 import { EyeFilledIcon } from "./EyeFilledIcon";
 import { EyeSlashFilledIcon } from "./EyeSlashFilledIcon";
 
-import { Link } from "react-router-dom";
-import LearningPic from "../image/learningSignup.jpg";
-import LearningPic2 from "../image/learning2.avif";
-
+import LearningImg from "../image/learning2.avif";
 import googleIcon from "../image/googleIcon.png";
-import { cycle } from "../data";
-import SignIn from "./SignIn";
 
 export default function SignUp(props) {
-  const { openButtonClassname, openModal } = props;
+  const {openButtonClassname} = props;
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
 
   //EMAIL VALIDATION
   const [value, setValue] = React.useState("");
 
   const validateEmail = (value) =>
-    //value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
     value.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i);
   const isInvalid = React.useMemo(() => {
     if (value === "") return false;
@@ -45,20 +39,23 @@ export default function SignUp(props) {
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-  // GESTION DES SELECT
-  const [selected, setSelected] = React.useState(new Set([]));
-
-  if (openModal) {
-    {
-      isOpen = true;
-    }
-  }
-
+  // GERER LA MIGRATION VERS L'AUTRES MODAL
+  const ModalMangement = () => {
+    onOpenChange(() => {
+      isOpen = !isOpen;
+    });
+  };
+{/*className="bg-[#754ffe] p-6 text-white text-sm font-bold "*/}
   return (
     <div className="z-50">
-      <h1    className={"bg-red-400"}>
-        S'inscire
-      </h1>
+      <Button
+        radius="sm"
+        onPress={onOpen}
+        className={openButtonClassname}
+  
+      >
+        S'inscrire
+      </Button>
       <Modal size="4xl" isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent className=" p-0 z-20">
           {(onClose) => (
@@ -68,7 +65,7 @@ export default function SignUp(props) {
                 {/*h-[600px]*/}
                 <div className="hidden md:flex flex-1  h-[600px]">
                   <img
-                    src={LearningPic}
+                    src={LearningImg}
                     alt=""
                     className=" object-cover w-full h-full "
                   />
@@ -81,13 +78,13 @@ export default function SignUp(props) {
                       </h1>
                       <p className="text-[14px]">
                         Vous avez un compte ?
-                        <Link
+                        <p
                           to={"/mantor"}
-                          className="text-blue-500 font-bold "
+                          className="text-blue-500 font-bold cursor-pointer "
+                          onClick={ModalMangement}
                         >
-                          {" "}
                           Se connecter {">"}
-                        </Link>
+                        </p>
                       </p>
                     </div>
                     {/* LES INPUTS */}

@@ -3,6 +3,9 @@ import React from "react";
 import { comCss } from "./ComponentsCss";
 import heroimg from "../image/hero-img.png";
 import { NavLink } from "react-router-dom";
+import SignIn from "./SignIn";
+import "../index-tailwind.css";
+import SignUp from "./SignUp";
 
 const Hero = () => {
   const classes = comCss();
@@ -18,6 +21,8 @@ const Hero = () => {
             >
               Bienvenu(e) sur votre plateforme d'apprentissage
             </Typography>
+            <SignIn />
+            <SignUp />
             <Typography variant="h5" component="p" className={classes.hero_des}>
               Instructeurs sélectionnés avec soin et cours élaborés par des
               experts, conçus pour les étudiants et entrepreneurs modernes.
@@ -31,6 +36,7 @@ const Hero = () => {
               >
                 Parcourir les cours
               </Button>
+
               <Button
                 ccomponent={NavLink}
                 to="/"

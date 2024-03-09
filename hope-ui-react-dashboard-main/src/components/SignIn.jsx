@@ -1,3 +1,4 @@
+import '../index-tailwind.css'
 import React, { useState } from "react";
 import {
   Modal,
@@ -21,7 +22,7 @@ import SignUp from "./SignUp";
 export default function SignIn(props) {
   const {openButtonClassname} = props;
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [openModal, setOpenModal] = useState(false);
+
 
   //EMAIL VALIDATION
   const [value, setValue] = React.useState("");
@@ -44,7 +45,7 @@ export default function SignIn(props) {
   const ModalMangement = () => {
     onOpenChange(() => {
       isOpen = !isOpen;
-      setOpenModal(!isOpen); 
+
     });
   };
 {/*className="bg-[#754ffe] p-6 text-white text-sm font-bold "*/}
@@ -54,7 +55,6 @@ export default function SignIn(props) {
         radius="sm"
         onPress={onOpen}
         className={openButtonClassname}
-  
       >
         Se connecter
       </Button>
@@ -84,7 +84,7 @@ export default function SignIn(props) {
                           className="text-blue-500 font-bold "
                           onClick={ModalMangement}
                         >
-                          <SignUp openModal={openModal} openButtonClassname={'bg-white p-6 text-blue-500 text-sm font-bold'} />
+                          S'inscrire
                         </p>
                       </p>
                     </div>

@@ -1,7 +1,8 @@
 import { createTheme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Theme } from "../Theme";
-import counts from "../image/Code.jpg";
+//import counts from "../image/Code.jpg";
+import counts from "../image/realisations.avif";
 
 const theme = createTheme({
   breakpoints: {
@@ -74,7 +75,7 @@ export const pageCss = makeStyles(() => ({
       left: "0",
       right: "0",
       bottom: "0",
-      background: "rgb(36 32 32 / 69%)",
+      background: "rgb(36 32 32 / 29%)",
       zIndex: -1,
     },
   },

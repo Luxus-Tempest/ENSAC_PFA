@@ -3,6 +3,8 @@ import React from "react";
 import { comCss } from "./ComponentsCss";
 import { Homeextra_1 } from "../data";
 import { Video } from "lucide-react";
+//import "../index-tailwind.css";
+//{'text-[#c28135] flex items-center text-[20px] bg-[#ffeeda] p-2 rounded-full mr-2'}
 
 const Extra1 = () => {
   const classes = comCss();
@@ -16,10 +18,10 @@ const Extra1 = () => {
                 <div
                   style={{
                     color:"#c28135", 
+                    fontSize: "20px !important",
                     display: "flex",
                     alignItems:"center", 
-                    justifyContent:"center", 
-                    background: "#f9f9f9f9",
+                    background: "#ffeeda",
                     padding: "0.7rem",
                     borderRadius: "50%",
                     marginRight: "0.6rem",

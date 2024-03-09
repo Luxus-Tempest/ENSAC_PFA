@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 //router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -19,6 +20,11 @@ import Blog from "./page/Blog";
 import Contact from "./page/Contact";
 import Mantor from "./page/Mantor";
 import SingleCourse from "./page/SingleCourse";
+
+import ScrollToTops from "./components/ScrollToTops";
+import { NextUIProvider } from "@nextui-org/react";
+import ToastProvider from "./provider/ToastProvider";
+
 const router = createBrowserRouter(
   [
     {
@@ -58,11 +64,15 @@ const router = createBrowserRouter(
 );
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-      <Provider store={store}>
+    <Provider store={store}>
+      <ToastProvider />
+      <NextUIProvider>
         <App>
           <RouterProvider router={router}></RouterProvider>
+          <ScrollToTops />
         </App>
-      </Provider>
+      </NextUIProvider>
+    </Provider>
   </React.StrictMode>
 );
 

@@ -1,4 +1,4 @@
-import React,{useEffect,memo,Fragment} from 'react'
+import React,{useEffect,memo,Fragment, useState} from 'react'
 import { Link } from 'react-router-dom'
 import VerticalNav from '../SidebarStyle/vertical-nav'
 
@@ -11,6 +11,8 @@ import * as SettingSelector from "../../../../store/setting/selectors";
 // Redux Selector / Action
 import { useSelector } from "react-redux";
 import Logo from '../../components/logo';
+import { MoveLeft, MoveRight } from 'lucide-react';
+import { NavigateBefore, NavigateNext } from '@mui/icons-material';
 
 // import SidebarDark from '../../components/settingoffcanvas'
 
@@ -24,9 +26,11 @@ const Sidebar = memo((props) => {
     const sidebarHide = useSelector(SettingSelector.sidebar_show); // array
     const sidebarType = useSelector(SettingSelector.sidebar_type); // array
     const sidebarMenuStyle = useSelector(SettingSelector.sidebar_menu_style);
+    let [sidebarToggled, setSidebarToggled] = useState(false);
   
     const minisidebar = () => {
       document.getElementsByTagName("ASIDE")[0].classList.toggle("sidebar-mini");
+      setSidebarToggled((prev) => !prev);
     };
     useEffect(() => {
       Scrollbar.init(document.querySelector("#my-scrollbar"));
@@ -88,31 +92,7 @@ const Sidebar = memo((props) => {
             data-active="true"
             onClick={minisidebar}
           >
-            <i className="icon">
-              <svg
-                width="20"
-                className="icon-20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.25 12.2744L19.25 12.2744"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-                <path
-                  d="M10.2998 18.2988L4.2498 12.2748L10.2998 6.24976"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-              </svg>
-            </i>
+            {sidebarToggled ? <NavigateNext size={20} /> : <NavigateBefore size={20} /> }
           </div>
         </div>
         <div

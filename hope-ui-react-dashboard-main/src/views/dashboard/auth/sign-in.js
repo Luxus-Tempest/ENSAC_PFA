@@ -8,7 +8,7 @@ import facebook from "../../../assets/images/brands/fb.svg";
 import google from "../../../assets/images/brands/gm.svg";
 import instagram from "../../../assets/images/brands/im.svg";
 import linkedin from "../../../assets/images/brands/li.svg";
-import auth1 from "../../../assets/images/auth/01.png";
+import auth1 from "../../../assets/images/auth/learning.avif";
 
 const SignIn = () => {
   let history = useNavigate();
@@ -73,10 +73,12 @@ const SignIn = () => {
                     </Link>
                     <h2 className="mb-2 text-center">Sign In</h2>
                     <p className="text-center">Login to stay connected.</p>
-                    <Form onSubmit={(e)=>{
-                     e.preventDefault();    
-                     history("/dashboard");
-                    }}  >
+                    <Form
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        history("/dashboard");
+                      }}
+                    >
                       <Row>
                         <Col lg="12">
                           <Form.Group className="form-group">
@@ -220,7 +222,7 @@ const SignIn = () => {
           >
             <Image
               src={auth1}
-              className="Image-fluid gradient-main animated-scaleX"
+              className="Image-fluid gradient-main "
               alt="images"
             />
           </Col>

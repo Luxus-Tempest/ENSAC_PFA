@@ -2,17 +2,17 @@ import { Video, GraduationCap, PanelRight } from "lucide-react";
 
 export const Homeextra_1 = [
   {
-    icon: <PanelRight size={28} strokeWidth={3} />,
+    icon: <PanelRight size={28} strokeWidth={2} />,
     title: "30,000 cours en ligne",
     des: "Apprendre de variété de thèmes",
   },
   {
-    icon: <GraduationCap size={28} strokeWidth={3} />,
+    icon: <GraduationCap size={28} strokeWidth={2} />,
     title: "Un apprentissage de qualité",
     des: "Trouver le meilleur instructeur pour vous.",
   },
   {
-    icon: <Video size={32} strokeWidth={3} />,
+    icon: <Video size={32} strokeWidth={2} />,
     title: "Acces à vie",
     des: "Apprendre selon votre disponibilité",
   },
