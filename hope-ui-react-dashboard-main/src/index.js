@@ -22,8 +22,10 @@ import Mantor from "./page/Mantor";
 import SingleCourse from "./page/SingleCourse";
 
 import ScrollToTops from "./components/ScrollToTops";
-import { NextUIProvider } from "@nextui-org/react";
+
 import ToastProvider from "./provider/ToastProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter(
   [
@@ -66,12 +68,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <ToastProvider />
-      <NextUIProvider>
+      <ToastContainer />
         <App>
           <RouterProvider router={router}></RouterProvider>
           <ScrollToTops />
         </App>
-      </NextUIProvider>
+    
     </Provider>
   </React.StrictMode>
 );

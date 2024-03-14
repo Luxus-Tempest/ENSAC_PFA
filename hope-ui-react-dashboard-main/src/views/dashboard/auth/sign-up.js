@@ -10,7 +10,8 @@ import instagram from "../../../assets/images/brands/im.svg";
 import linkedin from "../../../assets/images/brands/li.svg";
 import auth5 from "../../../assets/images/auth/learning.avif";
 import { MoveLeftIcon } from "lucide-react";
-import toast from "react-hot-toast";
+//import toast from "react-hot-toast";
+import {  toast } from 'react-toastify';
 
 const SignUp = () => {
   let history = useNavigate();
@@ -41,7 +42,8 @@ const SignUp = () => {
                     <Form
                       onSubmit={(e) => {
                         e.preventDefault();
-                        toast.success("YOOOOO BRO");
+                        //toast.success("YOOOOO BRO");
+                        toast.info("YOU'RE SUBMITTING")
                       }}
                     >
                       <Row>
@@ -122,7 +124,7 @@ const SignUp = () => {
                               type="checkbox"
                               id="customCheck1"
                               value={'Professeur'}
-                              onChange={(e) => toast.success(e.currentTarget.value) }
+                              onChange={(e) => toast.info(`Vous êtes un  ${e.target.value}`) }
                             />
                             <Form.Check.Label htmlFor="customCheck1">
                               Professeur
@@ -134,7 +136,7 @@ const SignUp = () => {
                               type="checkbox"
                               id="customCheck1"
                               value={'Etudiant'}
-                              onChange={(e) => toast.success(e.currentTarget.value) }
+                              onChange={(e) => toast.info(`Vous êtes un  ${e.target.value}`) }
 
                             />
                             <Form.Check.Label htmlFor="customCheck1">

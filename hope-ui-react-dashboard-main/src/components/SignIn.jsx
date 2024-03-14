@@ -162,6 +162,10 @@ export default function SignIn(props) {
                     </p>
                   </div>
                 </div>
+
+                <div className=" hidden ">
+                  <SignUp />
+                </div>
               </ModalBody>
               {/*<ModalFooter>
                 <Button
